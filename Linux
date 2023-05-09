@@ -1,0 +1,33 @@
+root@server:~# touch mydata.txt
+root@server:~# ls -l mydata.txt
+-rw-r--r-- 1 root root 0  5월  9 09:25 mydata.txt
+root@server:~# cmod 777 mydata.txt
+명령어 'cmod' 을(를) 찾을 수 없습니다. 다음 명령어로 시도하시겠습니까:
+  deb jmodopenjdk-11-jdk-headless의 명령어 ' (11.0.18+10-0ubuntu1~22.04)'
+  deb jmodopenjdk-17-jdk-headless의 명령어 ' (17.0.6+10-0ubuntu1~22.04)'
+  deb jmodopenjdk-18-jdk-headless의 명령어 ' (18.0.2+9-2~22.04)'
+  deb jmodopenjdk-19-jdk-headless의 명령어 ' (19.0.2+7-0ubuntu3~22.04)'
+  deb qmodgridengine-client의 명령어 ' (8.1.9+dfsg-10build1)'
+  deb chmodcoreutils의 명령어 ' (8.32-4.1ubuntu1)'
+  deb modmonodoc-base의 명령어 ' (6.8.0.105+dfsg-3.2)'
+  deb cmsdxrootd-server의 명령어 ' (5.4.1-1)'
+  deb kmodkmod의 명령어 ' (29-1ubuntu1)'
+Try: apt install <deb name>
+root@server:~# chmod 777 mydata.txt
+root@server:~# ls -l mydata.txt
+-rwxrwxrwx 1 root root 0  5월  9 09:25 mydata.txt
+root@server:~# chmod 644 mydata.txt
+root@server:~# ls -l mydata.txt
+-rw-r--r-- 1 root root 0  5월  9 09:25 mydata.txt
+root@server:~# chmod u+x mydata.txt
+root@server:~# ls -l mydata.txt
+-rwxr--r-- 1 root root 0  5월  9 09:25 mydata.txt
+root@server:~# chmod u-x mydata.txt
+root@server:~# ls -l mydata.txt
+-rw-r--r-- 1 root root 0  5월  9 09:25 mydata.txt
+root@server:~# ls -l mydata.txt
+-rw-r--r-- 1 root root 0  5월  9 09:25 mydata.txt
+root@server:~# chmod o+x mydata.txt
+root@server:~# ls -l mydata.txt
+-rw-r--r-x 1 root root 0  5월  9 09:25 mydata.txt
+root@server:~# 
