@@ -1,0 +1,97 @@
+root@server:~/바탕화면# cd
+root@server:~# touch mydata.txt
+root@server:~# ls -l mydata.txt
+-rw-r--r-- 1 root root 0  5월  9 09:25 mydata.txt
+root@server:~# cmod 777 mydata.txt
+명령어 'cmod' 을(를) 찾을 수 없습니다. 다음 명령어로 시도하시겠습니까:
+  deb jmodopenjdk-11-jdk-headless의 명령어 ' (11.0.18+10-0ubuntu1~22.04)'
+  deb jmodopenjdk-17-jdk-headless의 명령어 ' (17.0.6+10-0ubuntu1~22.04)'
+  deb jmodopenjdk-18-jdk-headless의 명령어 ' (18.0.2+9-2~22.04)'
+  deb jmodopenjdk-19-jdk-headless의 명령어 ' (19.0.2+7-0ubuntu3~22.04)'
+  deb qmodgridengine-client의 명령어 ' (8.1.9+dfsg-10build1)'
+  deb chmodcoreutils의 명령어 ' (8.32-4.1ubuntu1)'
+  deb modmonodoc-base의 명령어 ' (6.8.0.105+dfsg-3.2)'
+  deb cmsdxrootd-server의 명령어 ' (5.4.1-1)'
+  deb kmodkmod의 명령어 ' (29-1ubuntu1)'
+Try: apt install <deb name>
+root@server:~# chmod 777 mydata.txt
+root@server:~# ls -l mydata.txt
+-rwxrwxrwx 1 root root 0  5월  9 09:25 mydata.txt
+root@server:~# chmod 644 mydata.txt
+root@server:~# ls -l mydata.txt
+-rw-r--r-- 1 root root 0  5월  9 09:25 mydata.txt
+root@server:~# chmod u+x mydata.txt
+root@server:~# ls -l mydata.txt
+-rwxr--r-- 1 root root 0  5월  9 09:25 mydata.txt
+root@server:~# chmod u-x mydata.txt
+root@server:~# ls -l mydata.txt
+-rw-r--r-- 1 root root 0  5월  9 09:25 mydata.txt
+root@server:~# ls -l mydata.txt
+-rw-r--r-- 1 root root 0  5월  9 09:25 mydata.txt
+root@server:~# chmod o+x mydata.txt
+root@server:~# ls -l mydata.txt
+-rw-r--r-x 1 root root 0  5월  9 09:25 mydata.txt
+root@server:~# nano sample
+root@server:~# cat sample
+리눅스 명령 연습중
+파일 허가권과 소유권에 대한 명령 실습중
+root@server:~# ls -l sample
+-rw-r--r-- 1 root root 84  5월  9 10:17 sample
+root@server:~# sample
+명령어 'sample' 을(를) 찾을 수 없습니다. 그러나 다음을 통해 설치할 수 있습니다:
+apt install barcode
+root@server:~# ./sample
+bash: ./sample: 허가 거부
+root@server:~# chmod u+x sample
+root@server:~# ./sample
+./sample: 줄 1: 리눅스: 명령어를 찾을 수 없음
+./sample: 줄 2: 파일: 명령어를 찾을 수 없음
+root@server:~# mkdlr poly_prof
+명령어 'mkdlr' 을(를) 찾을 수 없습니다. 다음 명령어로 시도하시겠습니까:
+  deb mkdircoreutils의 명령어 ' (8.32-4.1ubuntu1)'
+Try: apt install <deb name>
+root@server:~# mkdir poly_prof
+root@server:~# chown poly_prof sample
+chown: 부적절한 사용자: `poly_prof'
+root@server:~# chmod u+x poly_prof
+root@server:~# chown poly_prof sample
+chown: 부적절한 사용자: `poly_prof'
+root@server:~# chmod 754 sample
+root@server:~# ls -l sample
+-rwxr-xr-- 1 root root 84  5월  9 10:17 sample
+root@server:~# pwd
+/root
+root@server:~# ls -l /root/sample
+-rwxr-xr-- 1 root root 84  5월  9 10:17 /root/sample
+root@server:~# ls -ld /root
+drwx------ 19 root root 4096  5월  9 10:27 /root
+root@server:~# mv sample -poly_prof
+mv: 부적절한 옵션 -- 'p'
+자세한 정보는 'mv --help'를 입력하십시오.
+root@server:~# mv sample ~poly_prof
+root@server:~# ls -l sample
+ls: 'sample'에 접근할 수 없음: 그런 파일이나 디렉터리가 없습니다
+root@server:~# su - poly_prof
+su: user poly_prof does not exist or the user entry does not contain all the required fields
+root@server:~# chmod 777 sample
+chmod: 'sample'에 접근할 수 없음: 그런 파일이나 디렉터리가 없습니다
+root@server:~# chmod 777 poly_prof
+root@server:~# su - poly_prof
+su: user poly_prof does not exist or the user entry does not contain all the required fields
+root@server:~# chmod 777 poly_prof
+root@server:~# ls -l sample
+ls: 'sample'에 접근할 수 없음: 그런 파일이나 디렉터리가 없습니다
+root@server:~# cd
+root@server:~# madir linkdir
+명령어 'madir' 을(를) 찾을 수 없습니다. 다음 명령어로 시도하시겠습니까:
+  deb mdirmtools의 명령어 ' (4.0.33-1+really4.0.32-1build1)'
+  deb mkdircoreutils의 명령어 ' (8.32-4.1ubuntu1)'
+  deb mmdirsimh의 명령어 ' (3.8.1-6.1)'
+  deb maddrmblaze의 명령어 ' (1.1-1)'
+Try: apt install <deb name>
+root@server:~# mkdir linkdir
+root@server:~# cd linkdir
+root@server:~/linkdir# nano originalFile
+root@server:~/linkdir# cat originalFile
+링크시킬 원본 파일을 작성합니다.
+root@server:~/linkdir# 
