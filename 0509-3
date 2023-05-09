@@ -1,0 +1,51 @@
+root@server:~/linkdir# ls
+originalFile
+root@server:~/linkdir# ln originalFile hardlink
+root@server:~/linkdir# ln -s originalFile softlink
+root@server:~/linkdir# ls -l
+합계 8
+-rw-r--r-- 2 root root 47  5월  9 10:50 hardlink
+-rw-r--r-- 2 root root 47  5월  9 10:50 originalFile
+lrwxrwxrwx 1 root root 12  5월  9 11:10 softlink -> originalFile
+root@server:~/linkdir# ls -li
+합계 8
+798410 -rw-r--r-- 2 root root 47  5월  9 10:50 hardlink
+798410 -rw-r--r-- 2 root root 47  5월  9 10:50 originalFile
+798397 lrwxrwxrwx 1 root root 12  5월  9 11:10 softlink -> originalFile
+root@server:~/linkdir# mv originalFile ../
+root@server:~/linkdir# ls
+hardlink  softlink
+root@server:~/linkdir# cat hardlink
+링크시킬 원본 파일을 작성합니다.
+root@server:~/linkdir# cat softlink
+cat: softlink: 그런 파일이나 디렉터리가 없습니다
+root@server:~/linkdir# cd
+root@server:~# ls -li originalfile
+ls: 'originalfile'에 접근할 수 없음: 그런 파일이나 디렉터리가 없습니다
+root@server:~# ls -li originalFile
+798410 -rw-r--r-- 2 root root 47  5월  9 10:50 originalFile
+root@server:~# mv originalFile ./linkdir
+root@server:~# cd linkdir
+root@server:~/linkdir# ls
+hardlink  originalFile  softlink
+root@server:~/linkdir# cat softlink
+링크시킬 원본 파일을 작성합니다.
+root@server:~/linkdir# yes > /dev/null
+종료됨
+root@server:~/linkdir# yes > /dev/null
+죽었음
+root@server:~/linkdir# 
+
+root@server:~# ps -ef|grep yes
+root        4495    2551 99 11:41 pts/0    00:00:45 yes
+root        4497    4460  0 11:41 pts/1    00:00:00 grep --color=auto yes
+root@server:~# kill 4495
+root@server:~# kill -y 4495
+bash: kill: y: 부적절한 시그널 정의
+root@server:~# kill -9 4495
+bash: kill: (4495) - 그런 프로세스가 없음
+root@server:~# ps -ef|grep yes
+root        4498    2551 99 11:42 pts/0    00:00:05 yes
+root        4501    4460  0 11:42 pts/1    00:00:00 grep --color=auto yes
+root@server:~# kill -9 4498
+root@server:~# 
